@@ -105,3 +105,6 @@ dist
 
 # Security
 .dccache
+
+# Additional folder
+react-typescript/react-and-typescript-projects/
