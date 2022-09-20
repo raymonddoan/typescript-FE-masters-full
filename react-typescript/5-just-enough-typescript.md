@@ -19,7 +19,11 @@ const arrayWithoutLast = tap([1, 2, 3, 4], function (array) {
 });
 ```
 
-If using arrow functions: (Note: Newer typescript compilers also support trailing comma `const foo = <T,>(x: T) => x;` to sidestep the JSX ambiguity)
+If using arrow functions:
+
+- (Note: Newer typescript compilers also support trailing comma `const foo = <T,>(x: T) => x;` to sidestep the JSX ambiguity)
+  - Reason for this is because the parser cannot tell if the beginning bracket `<T>()` is JSX or Type
+  - Side effect of the trailing comma is Prettier will not be able to read it properly.
 
 ```ts
 const tap = <T,>(arg: T, fn: (x: T) => void): T => {
@@ -28,7 +32,7 @@ const tap = <T,>(arg: T, fn: (x: T) => void): T => {
 };
 ```
 
-In normal functions:
+As a result, it might be favourable to write in normal function. To build this in normal functions:
 
 ```ts
 function tap<T,>(arg: T, fn: (x: T) => void): T {
@@ -67,5 +71,3 @@ Pick (similar to lodash) & Omit (Used for Types / Objects)
 ## Refactoring in Utility Types
 
 ## Template Literals
-
-
