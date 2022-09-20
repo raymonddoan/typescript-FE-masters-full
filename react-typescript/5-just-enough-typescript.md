@@ -37,11 +37,35 @@ function tap<T,>(arg: T, fn: (x: T) => void): T {
 };
 ```
 
-
 ## Utility Types in React
+
+Keys and Values
+
+- `keyof` gives all the keys of the provided type
+- `Obj[keyof Obj]` will give you all the values of the object
+
+Unions & Intersections
+
+- Unions of Objects will only give the shared prop. Unions of Types will give everything.
+- Intersection of Objs will give the combination of the two. Intersection of Types will give the shared values.
+
+Conditionals
+
+Exclude & Extract (Used for the Union Members)
+
+Pick (similar to lodash) & Omit (Used for Types / Objects)
+
+- Picks out all the keys of the type
+- Omit is the opposite and will leave out the listed keys
+
+`React.HTMLProps<HTMLXXXElements>`
+
+`React.ComponentProps<typeof XXX>`
+
+- Will give you in the prop within the component and pull that out
 
 ## Refactoring in Utility Types
 
-## Utility Types
-
 ## Template Literals
+
+
